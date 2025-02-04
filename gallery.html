@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JB Sound & Light</title>
+    <link rel="icon" href="./assets/logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- FontAwesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black bg-opacity-60  text-gray-200">
+
+    <!--Navigation Section-->
+    <nav class="fixed top-0 left-1/2 transform -translate-x-1/2 w-full max-w-[1200px] bg-gray-900 bg-opacity-80 py-4 px-6 flex justify-between items-center z-50">
+        <!-- Logo on the left -->
+        <img src="assets/logo.png" class="h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20 w-auto max-w-full mr-4" alt="Logo">
+    
+        <!-- Hamburger menu for mobile (only visible on mobile) -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl">☰</button>
+    
+        <!-- Menu links -->
+        <ul id="menu" class="hidden md:flex md:space-x-6 text-lg flex-row md:items-center absolute md:static top-16 left-0 w-full bg-gray-900 md:bg-transparent p-4 md:p-0 z-40">
+            <li>
+                <a href="index.html" class="block py-2 px-4 relative text-white transition-all duration-300 hover:text-purple-400 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-purple-400 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full">Home</a>
+            </li>
+            <li>
+                <a href="about.html" class="block py-2 px-4 relative text-white transition-all duration-300 hover:text-purple-400 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-purple-400 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full">About</a>
+            </li>
+            <li>
+                <a href="services.html" class="block py-2 px-4 relative text-white transition-all duration-300 hover:text-purple-400 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-purple-400 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full">Services</a>
+            </li>
+            <li>
+                <a href="gallery.html" class="block py-2 px-4 relative text-white transition-all duration-300 hover:text-purple-400 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-purple-400 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full">Gallery</a>
+            </li>
+            <li>
+                <a href="./index.html#contact"
+                    class="block py-2 px-4 relative text-white transition-all duration-300 hover:text-purple-400 before:absolute before:bottom-0 before:left-0 before:w-0 before:h-[2px] before:bg-purple-400 before:transition-all before:duration-300 before:ease-in-out hover:before:w-full">Contact</a>
+            </li>
+            <button id="menu-close" class="md:hidden text-white text-2xl absolute top-2 right-4">✖</button>
+        </ul>
+    
+        <!-- Social Icons (right side) -->
+        <div class="hidden md:flex space-x-6 text-white">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/your_number" class="text-2xl hover:text-green-400">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/your_username" class="text-2xl hover:text-pink-400">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/your_username" class="text-2xl hover:text-blue-600">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/c/your_channel" class="text-2xl hover:text-red-600">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    
+        <!-- Mobile view: Social Icons -->
+        <div class="md:hidden flex space-x-4 text-white">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/your_number" class="text-2xl hover:text-green-400">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/your_username" class="text-2xl hover:text-pink-400">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/your_username" class="text-2xl hover:text-blue-600">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/c/your_channel" class="text-2xl hover:text-red-600">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </nav>
+<!-- Gallery Section -->
+<section class="py-16 px-6 max-w-7xl mx-auto text-center mt-28">
+    <h2 class="text-4xl font-extrabold text-white neon-text">Our Event Gallery</h2>
+    <p class="mt-4 text-lg text-gray-300">Check out some of our electrifying DJ and Light events.</p>
+
+    <!-- Grid Gallery -->
+    <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+        <!-- Images will be inserted dynamically via JS -->
+    </div>
+
+    <!-- See More Button -->
+    <button id="seeMoreBtn" class="mt-6 px-6 py-2 bg-purple-600 text-white text-lg font-bold rounded-lg transition-transform hover:scale-105">
+        See More
+    </button>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 bg-black bg-opacity-80 hidden flex items-center justify-center">
+    <button class="absolute top-5 right-5 text-white text-2xl" onclick="closeModal()">✖</button>
+    <img id="lightbox-img" src="" alt="Gallery Image" class="max-w-full max-h-[90vh] rounded-lg shadow-lg">
+</div>
+
+<script>
+    const images = [
+        { id: "img1", src: "./assets/events/award.jpg", alt: "DJ Event" },
+        { id: "img2", src: "./assets/events/birthday.jpg", alt: "Concert Lights" },
+        { id: "img3", src: "./assets/events/exhibition.jpeg", alt: "Club DJ" },
+        { id: "img4", src: "./assets/events/puja.jpg", alt: "Party Lights" },
+        { id: "img5", src: "./assets/events/seminar.jpg", alt: "DJ Night" },
+        { id: "img6", src: "./assets/events/sports.jpg", alt: "Disco Lights" }
+    ];
+
+    const gallery = document.getElementById("gallery");
+    const seeMoreBtn = document.getElementById("seeMoreBtn");
+    let visibleImages = 3;
+
+    function renderGallery() {
+        gallery.innerHTML = "";
+        images.slice(0, visibleImages).forEach(img => {
+            const imgContainer = document.createElement("div");
+            imgContainer.classList.add("relative", "group", "cursor-pointer");
+
+            imgContainer.innerHTML = `
+                <img src="${img.src}" alt="${img.alt}" class="w-full h-60 object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105 z-60">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="mt-6 px-6 py-2 bg-purple-600 text-white text-lg font-bold rounded-lg transition-transform hover:scale-105" onclick="openModal('${img.src}')">View</button>
+                </div>
+            `;
+            gallery.appendChild(imgContainer);
+        });
+
+        seeMoreBtn.style.display = visibleImages < images.length ? "block" : "none";
+    }
+
+    function openModal(imgSrc) {
+        document.getElementById("lightbox-img").src = imgSrc;
+        document.getElementById("lightbox").classList.remove("hidden");
+    }
+
+    function closeModal() {
+        document.getElementById("lightbox").classList.add("hidden");
+    }
+
+    seeMoreBtn.addEventListener("click", () => {
+        visibleImages = images.length;
+        renderGallery();
+    });
+
+    // Initial render
+    renderGallery();
+</script>
+
+<!--Footer section-->
+<footer class="bg-black text-gray-300 py-10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            
+            <!-- Address Section -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-4">Address</h3>
+                <p><i class="fas fa-map-marker-alt text-cyan-400 mr-2"></i> 123, Cyberpunk Street, Neon City</p>
+            </div>
+
+            <!-- Contact Section -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-4">Contact</h3>
+                <p><i class="fas fa-phone text-cyan-400 mr-2"></i> +91 9876543210</p>
+                <p><i class="fas fa-envelope text-cyan-400 mr-2"></i> contact@yourwebsite.com</p>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-4">Follow Us</h3>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition"><i class="fab fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="mt-8 text-center border-t border-gray-700 pt-4">
+            <p>&copy; 2024 YourWebsite. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="./js/script.js"></script>
+</body>
+
+</html>

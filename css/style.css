@@ -1,0 +1,85 @@
+/* INDEX PAGE CSS STYLES */
+
+/* Neon Glow Effect for Button */
+.neon-button {
+    position: relative;
+    z-index: 0;
+    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+    transition: box-shadow 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect for Neon Glow */
+.neon-button:hover {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+}
+
+/* Adding Pulse Effect */
+.neon-button:active {
+    animation: pulse 0.5s infinite alternate;
+}
+
+/* Pulse Animation for Button */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* Neon Glow Effect */
+.neon-text {
+    text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff;
+}
+
+/* Service Card Styling */
+.service-card {
+    @apply w-72 p-6 bg-gray-900 rounded-xl text-center shadow-md border border-gray-700 relative transition-all duration-300;
+}
+
+/* Smooth Hover Effect */
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 4px 20px rgba(255, 0, 255, 0.4);
+}
+
+ /* Wrapper for smooth overflow handling */
+ .testimonial-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+/* Sliding container */
+.testimonial-slider {
+    display: flex;
+    gap: 1rem;
+    animation: slide 15s linear infinite;
+    width: max-content; /* Prevents line break */
+}
+
+/* Ensures text remains inside */
+.testimonial-card {
+    min-width: 320px; /* Fixed width for all cards */
+    max-width: 350px;
+    overflow: hidden;
+    white-space: normal;
+}
+
+/* Keyframe for continuous left to right movement */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Pause animation on hover */
+.testimonial-slider:hover {
+    animation-play-state: paused;
+}
+
+/* ABOUT PAGE CSS STYLES */
+
